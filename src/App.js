@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import Clock from './Clock';
+
 class App extends Component {
+
+  clickHandler(){
+    console.log("clicked")
+  }
+
+  linkHandler(e){
+    e.preventDefault();
+    console.log("link clicked: ")
+  }
+
+  // inputChangeHandler(e){
+    
+  // }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <h1>Hello World..!</h1>
+        <a href="App.js" onClick={(e) => this.linkHandler(e)}>Link</a>
+        <Clock val={10} />
+        
       </div>
     );
   }
+
 }
 
 export default App;
